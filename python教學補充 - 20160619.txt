@@ -1,0 +1,70 @@
+補充 - 2016/06/19 
+---------------------------------------------------------------------------------------
+1. Str.center()的功能基本只是字串位址re-alignment
+也就是輸入你要的長度 會把字串至中間你的範圍
+至於多出其他空間, default會補空白 
+但你也可以指定要替代的常數或符號
+
+Ex. 
+
+>>> print("hihi")
+hihi
+>>> print("hihi".center(10))
+   hihi
+>>> print("Hello".center(10,'#'))
+###hihi###
+
+---------------------------------------------------------------------------------------
+2. 有位大哥先進問到recursive function的問題
+我研究一下. 問題可能是大哥當時想嘗試的寫法是return空 - Null(大部分情況這樣是可以的) 
+
+Ex. 
+def recur_time(num):
+    if num == 0:
+        print("Recursion end ",num)
+        return #問題在這裡
+    else:
+        print("Recursion for ",num)
+        return num * recur_time(num - 1)
+
+>>> recur_time(4)
+"TypeError: unsupported operand type(s) for +: 'int' and 'NoneType" 
+
+但在recursive的case中"return " caller 會收到一個Null object (Python比較怪點 null 也是個物件) 所以當你把
+null object 去乘上 另一個數值object. Python就會覺得是不合法的操作 所以給你 "TypeError""
+
+簡單解法return一個實際數值但不影響原本乘法計算. 大家參考看看 
+
+Ex. 
+
+def recur_time(num):
+    if num == 0:
+        print("Recursion end ",num)
+        return 1 #加1
+    else:
+        print("Recursion for ",num)
+        return num * recur_time(num - 1)
+
+>>> recur_time(4)
+Recursion for  4
+Recursion for  3
+Recursion for  2
+Recursion for  1
+Recursion end  0
+24
+
+---------------------------------------------------------------------------------------
+3. 關於raspberrypi的image 大家可以到以下連結下載
+
+https://drive.google.com/open?id=0B4taOS2s8YZ9RFU4bFVGeWhPWE0
+
+裡面instruction_writeImage_toRpi.txt是我剪貼一些image寫入的操作方式 大家可以照者做把image寫入你的SD CARD(至少要有8GB!)
+至於有興趣自己安裝Python套件的朋友 可以直接在你自己的rpi有網路的環境去執行自動安裝的shell script 
+$bash setup_rpi.sh #也可以自己刪減 如果重複的話
+
+---------------------------------------------------------------------------------------
+
+
+謝謝大家
+/Paul
+paulyang0125@gmail.com

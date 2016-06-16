@@ -1,0 +1,44 @@
+##########################################
+If you're running in Windows
+##########################################
+
+1. Download Win32 Disk Imager 
+
+https://sourceforge.net/projects/win32diskimager/ 
+
+2. Insert the SD card (Normally it's 8GB) back into your computer.
+
+3. Head to the start menu or screen and type "disk management." Open the disk management program and find your SD card in the list. Right-click and delete all the partitions on your SD card. When it's empty, right-click on it and format it (it doesn't matter what filesystem you format it to, your computer just needs to recognize it).
+
+4. Open Win32DiskImager again and browse for your image file (myraspbmc_201606_clean). Select your device from the Device dropdown just as you did before. This time, click "Write" to write the image to the SD card.
+
+5. When it finishes, eject the SD card and re-insert it into your Raspberry Pi. When you boot it up, it should be in the exact same state it was in when you first cloned the SD card.
+
+##########################################
+If you're running in Linux
+##########################################
+
+
+1. Insert the SD card (Normally it's 8GB) back into your computer.
+
+2. Run df -h again. The new device that has appeared is your SD card. it will be listed as something like /dev/mmcblk0p1 or /dev/sdd1 or sdx
+
+3. run the following commands to unmount it 
+
+$umount /dev/sdx1
+
+4. write the image to the card with the command below
+
+$sudo dd bs=4M if=myraspbmc_201606_clean of=/dev/sdd
+
+5. To see the progress of the copy operation you can run the command below in another terminal
+$sudo pkill -USR1 -n -x dd 
+
+6. Run the command below - this will ensure the write cache is flushed and that it is safe to unmount your SD card.
+$sync
+
+7. eject the SD card and re-insert it into your Raspberry Pi. When you boot it up, it should be in the exact same state it was in when you first cloned the SD card.
+
+
+/Paul
+paulyang0125@gmail.com
