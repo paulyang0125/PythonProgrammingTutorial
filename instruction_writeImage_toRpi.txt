@@ -1,3 +1,7 @@
+Filename:myraspbmc_201606_clean
+File size:7,969,177,600 Bytes
+MD5:459457E7EC8AAB270FBC459E6444FB38
+
 ##########################################
 If you're running in Windows
 ##########################################
