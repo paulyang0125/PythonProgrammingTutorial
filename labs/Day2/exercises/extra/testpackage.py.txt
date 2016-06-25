@@ -1,0 +1,6 @@
+
+import mypacakge 
+mypacakge.subpacakge1.element1.print_path()
+mypacakge.subpacakge1.element1.print_path()
+
+

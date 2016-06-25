@@ -13,16 +13,16 @@ def test_case():
 	joy = Employee('Joy',15000,"writter")
 	mike = Employee('mike',20000,"teacher")
 	#add grade
-	paul.add_grade(100)
-	paul.add_grade(80)
-	paul.add_grade(90)
-	print("%s average grade:%d" % (paul.get_name(), paul.display_avg_grade()))
+	joy.add_grade(100)
+	joy.add_grade(80)
+	joy.add_grade(90)
+	print("%s average grade:%d" % (joy.get_name(), joy.display_avg_grade()))
 	#add failure grade
-	paul.add_grade(40)
-	paul.add_grade(30)
-	paul.add_grade(58)
+	joy.add_grade(40)
+	joy.add_grade(30)
+	joy.add_grade(58)
 	
-	print("%s failed clount:%d" % (paul.get_name(), paul.display_failure_count()))
+	print("%s failed clount:%d" % (joy.get_name(), joy.display_failure_count()))
 	#add failure grade
 	Employee.display_employee_count()
 	Employee.display_position_count("manager")

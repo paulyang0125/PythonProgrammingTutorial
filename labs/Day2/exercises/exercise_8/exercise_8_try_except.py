@@ -30,3 +30,5 @@ def print_file():
     except IOError as err:
         print("檔名不存在")
         print(err)
+        
+print_file()
