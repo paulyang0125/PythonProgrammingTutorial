@@ -49,13 +49,13 @@ Table of Content
 ***
 
 * The 4th class - Web application with python
-    * Introduction of flask
-    * CRUD, Database and ORM
-    * RESTful with GET/POST/PUT/DELETE
-    * Essential flask components – router, template engine…
-    * Raspberrypi HW access – GPIO
-    * Raspberrypi HW access – LCD
-    * Project – using Flask and python acccess to I/O to make a simple control center of Raspberry pi via web  
+    * Working with CRUD, Database and ORM
+    * Making http server  
+    * Developing Web with framework – flask 
+    * Access GPIOs in Raspberry PI 
+    * Control LCD in Raspberry PI 
+    * Project – using Flask and python access to I/O to make a simple control center of Raspberry pi via web
+
     
 ***
 
