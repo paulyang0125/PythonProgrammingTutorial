@@ -23,6 +23,7 @@ Table of Content
     * Built-In Functions of String
     * Function
     * I/O File 
+    
 ***
 
 * The 2nd class - Advanced Python
@@ -33,6 +34,7 @@ Table of Content
     * Useful Packages Intro: os, collection, sys, json…more
     * Text processing – Regular Expression and Unicode  
     * OO programming
+    
 ***
 
 * The 3rd class - Web Scraping with Python 
