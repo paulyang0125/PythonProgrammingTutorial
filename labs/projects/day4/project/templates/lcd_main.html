@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div data-role="header">
+  <h1>LCD控制</h1>
+</div>
+
+<div data-role="content" data-ajax = "false">
+
+<form method="post" action="LCM/send">
+  <label for="slider-1">寄送訊息:</label>
+  <input type="text" name="lcd" id="lcd" />  
+  <br />
+  
+  <input type="submit" value="傳送" />
+</form>
+
+{% if value %}
+<p>Message sent: {{ value }}</p>
+{% endif %}
+
+</div>
+
+{% endblock %}

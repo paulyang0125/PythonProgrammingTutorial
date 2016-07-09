@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div data-role="header">
+  <h1>GPIOs</h1>
+</div>
+
+<div data-role="content">
+	
+   <h1>LED and SW button 狀態清單</h1>
+   {% for pin in pins %}
+   
+   {% if pins[pin].type == 'output' %}
+   
+   
+   <p><h2>{{ pins[pin].name }}
+   {% if pins[pin].state == 1 %}
+   目前是開</h2> <a href="/GPIO/{{pin}}/off" data-role="button">關掉</a>
+   {% else %}
+   目前是關</h2> <a href="/GPIO/{{pin}}/on" data-role="button">打開</a>
+   {% endif %}
+   </p>
+   
+   {% elif pins[pin].type == 'input' %}
+   
+   
+   <p><h2>{{pins[pin].name}}
+   
+   {% if pins[pin].state == 1 %}
+   目前沒有按下</h2><a href="/GPIO/{{pin}}/read" data-role="button">讀取</a>
+   {% else %}
+   目前按下</h2><a href="/GPIO/{{pin}}/read" data-role="button">讀取</a>
+   {% endif %}
+   
+   </p>
+   
+   {% endif %}
+   {% endfor %}
+   
+   
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+</div>
+
+{% endblock %}

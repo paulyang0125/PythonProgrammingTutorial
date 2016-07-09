@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+<div data-role="header">
+  <h1>SOC 溫度</h1>
+</div>
+
+<style>
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+
+<div data-role="content">
+
+<h1>SOC 溫度觀測</h1>
+
+ <br />
+(<a href="/TEMP/recent">最新結果</a>)
+ <br />
+ 
+ <br />
+ 
+<form action="/TEMP/timeslot" method="POST">
+  <select name="timerange">
+    <option value="1d">一天</option>
+    <option value="2d">二天前</option>
+    <option value="5d">五天前</option>
+	<option value="test">test</option>
+  </select>
+
+ 
+  <button type="submit">Submit</button>
+</form>
+
+
+  <br />
+ 
+{% if data %}
+
+<table border="1" data-role="table" class="gridtable">
+
+<!--create header -->  
+<tr>
+{%for key in data['temps'][0]%}
+<th>{{key}}</th>
+{% endfor %}
+</tr>
+
+
+
+
+{% for temp in data['temps'] %}
+
+<tr>
+<td>{{temp['date']}}</td>
+<td>{{"   " + temp['temp'] + '\'C'}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+ <br />
+
+   {% if data['message'] %}
+   <h2>{{ data['message'] }}</h2>
+   {% endif %}
+   
+{% endif %}
+
+</div>
+
+{% endblock %}

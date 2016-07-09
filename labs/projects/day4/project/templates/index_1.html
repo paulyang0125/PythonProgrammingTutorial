@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div data-role="header">
+  <h1>Raspberry-Pi Control Panel</h1>
+</div>
+
+
+<div data-role="content">
+
+<div class="choice_list"> 
+
+		<h1> 請選擇要用的功能? </h1>
+
+		<ul data-role="listview" data-inset="true" >
+
+			<li><a href="/GPIO" data-transition="slidedown"> <img src="static/gpio.jpg"/> <h3> Control GPIO </h3></a></li>
+
+			<li><a href="/TEMP" data-transition="slidedown"> <img src="static/SOC_temp_log.jpg"/> <h3>SOC temperature</h3></a></li>
+			
+			<li><a href="/LCM" data-transition="slidedown"> <img src="static/lcm.jpg"/> <h3> Control LCM </h3></a></li>
+
+		</ul>
+
+</div>
+
+
+</div>
+{% endblock %}
+
+

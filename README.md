@@ -52,6 +52,7 @@ Table of Content
     * Working with CRUD, Database and ORM
     * Making http server  
     * Developing Web with framework – flask 
+    * Python Concurrency
     * Access GPIOs in Raspberry PI 
     * Control LCD in Raspberry PI 
     * Project – using Flask and python access to I/O to make a simple control center of Raspberry pi via web

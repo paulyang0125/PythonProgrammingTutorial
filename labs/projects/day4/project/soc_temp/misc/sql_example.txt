@@ -1,0 +1,33 @@
+#SQL correct syntax 
+
+
+
+
+CREATE table t1( id integer primary key, time timestamp default (strftime('%s', 'now')),txt text);
+insert into t1 (txt) values ('foo');
+insert into t1 (txt) values ('bar');
+insert into t1 (txt) values ('sss');
+
+
+select * from t1 where time < date('now','-1 years');
+select * from t1 where time >= strftime('%s',"2010-01-01")
+select * from t1 where time >= strftime('%s',"2010-01-01") and time<= strftime('%s',"2017-01-01")
+
+select  date('now','-1 month'); 
+
+SELECT  strftime('%s',"2019-01-01")
+
+select * from t1 where strftime('%Y-%m-%d %H:%M:%S', datetime(time, 'unixepoch'))  <  datetime('now','-1 hours');
+select * from t1 where strftime('%Y-%m-%d %H:%M:%S', datetime(time, 'unixepoch'))  >  datetime('now','-1 hours');
+select strftime('%Y-%m-%d %H:%M:%S', datetime(time, 'unixepoch'))  from soc_temp_new
+
+
+select datetime('now');
+select datetime('now', 'localtime'); ###Taiwan time
+select dateTime('now','+8 hours') ###Taiwan time 
+
+
+
+##### doesn't work ####
+SELECT * FROM t1 WHERE strftime('%m-%d-%Y', datetime(time, 'unixepoch')) BETWEEN "11-01-2011" AND "11-08-2016";
+SELECT *  FROM t1 WHERE time BETWEEN  strftime('%s'," 2010-01-01") AND  strftime('%s',"2019-01-01")
