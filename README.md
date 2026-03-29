@@ -8,7 +8,6 @@ This tutorial targets to let student reach the objectives below
 * Get the basis of network, web scraping and the useful examples with GoogleMap/Opendata API in Raspberry pi.  
 * Get familiar with flask, database, REST and also interacting with Raspberry pi I/O, such as LCM/GPIO/SOC temperature
 
-You can find more about the this tutorial in [class intro](http://www.ittraining.com.tw/ittraining/index.php/course/language/python).
 
 Table of Content
 ----------------
